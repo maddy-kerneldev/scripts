@@ -14,10 +14,10 @@
 #
 # Script expect <arch> folder to have asm-offset.s file. If not it will return with message
 
-usage() { echo "Usage: $0 <arch folder name>"}
+usage() { echo "Usage: $0 <arch folder name>"; }
 
 #Check for parameter
-if [-z "$1"]; then
+if [ -z $1 ]; then
 	usage
 	exit
 fi
