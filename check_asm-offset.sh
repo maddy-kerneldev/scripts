@@ -1,18 +1,23 @@
 #!/bin/sh
-# SPDX-License-Identifier: GPL-2.0
 #
-# Madhavan Srinivasan, IBM Corp 2022
+# Search for each macro defined in asm-offset.s in the
+# ./arch/<arch> source path for usage of the macro.
+# If not used, print the macro name.
 #
 # Usage: $ ./check_asm-offset.sh <arch>
 #
 # Example: ./check_asm-offset.sh powerpc
 #
-# Search for each macro defined in asm-offset.s in the ./arch/<arch> sourc path
-# for usage of the macro. If not used, print the macro name.
-#
 # Prerequisites:
+# Script expect <arch> folder to have asm-offset.s file.
+# If not it will return with message
 #
-# Script expect <arch> folder to have asm-offset.s file. If not it will return with message
+# Copyright (C) 2022 Madhavan Srinivasan <maddy@linux.ibm.com> IBM
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version
+# 2 of the License, or (at your option) any later version.
 
 usage() { echo "Usage: $0 <arch folder name>"; }
 
